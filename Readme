@@ -1,0 +1,15 @@
+# Readme
+
+
+
+
+
+# file2
+#### Class Ecse
+##### Method Set range
+- this function determines if the user wants data on on year or  a
+series of years.
+- *if year2 is not None* returns a list of websites yo be parsed. The
+ smallest and largest years are found. The While loop starts from the
+ smallest year then adds until the largest year each addition changes the
+  url and that is appended to the list

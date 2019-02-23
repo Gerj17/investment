@@ -1,0 +1,15 @@
+====
+EC_Share_index and gui
+====
+
+- Add a way to put the file in specific directory
+- Fix the gui problem which doesn't allow the use of a function for binding and commands
+- Document the functions
+
+Ensure it is not the weekend if it is close.
+Find the date of the last recording if that date is equal to the current date don't run
+
+
+
+
+
