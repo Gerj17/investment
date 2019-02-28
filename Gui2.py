@@ -105,7 +105,30 @@ class block_2(tk.Frame):
         print("hello")
 
 
-
+class block_par(tk.Frame):
+    def __init__(self, window):
+        tk.Frame.__init__(self, )
+        self.pack()
+        self.window = window
+        # -----Create widgets-----
+		 self.b_name = tk.Label(self,text="Business Name" )
+		 self.m_price = tk.Label(self,text="Market Price")
+		 self.avg_return = tk.Label(self,text="Average Dividend// Expected Dividend")
+		 self.answer = tk.Label(self,text="Years till par return")
+		 
+        self.btn_calculate = tk.Button(self, text="calculate", command=self.calculate, padx=2, pady=2)
+        self.btn_done = tk.Button(self, text="Done", command=self.quit, padx=2, pady=2)
+ 
+        # -----Place widget in frame-----
+ 
+        self.btn_calculate.grid(row=2, column=1, padx=200, pady=13)
+        self.btn_done.grid(row=4, column=1, padx=200, pady=13)
+ 
+    def calculate(self):
+        
+        return pass
+ 
+   
 
 
 
