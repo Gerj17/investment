@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f286a1e0-bdfb-4880-899c-1f15c1768ba4" name="Default" comment="rewrite import code">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Gerard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Gerard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BON_info_pg.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC_Share_Index.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gui2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template1Report.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.html" beforeDir="false" />
-    </list>
+    <list default="true" id="f286a1e0-bdfb-4880-899c-1f15c1768ba4" name="Default" comment="rewrite import code" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="80758" />
+    <option name="totalTimeSeconds" value="80886" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
