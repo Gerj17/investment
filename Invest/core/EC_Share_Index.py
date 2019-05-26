@@ -1,6 +1,7 @@
 from urllib.request import urlopen as urlopen
 from bs4 import BeautifulSoup as Soup
 from pathlib import Path
+from Invest.core.WebAccess import parse_website
 import time
 
 save_location = Path(Path.home(), "Desktop")
@@ -9,13 +10,12 @@ save_location = Path(Path.home(), "Desktop")
 # urls = {"EC-Share Index": "http://www.ecseonline.com/ecse_index.php", }
 # url = "http://www.ecseonline.com/ecse_index.php"
 
-
-def parse_website(website):
+"""def parse_website(website):
     client = urlopen(website)
     client_read = client.read()
     client.close()
     client_soup = Soup(client_read, "html.parser")
-    return client_soup
+    return client_soup"""
 
 
 def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
