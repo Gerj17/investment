@@ -1,21 +1,25 @@
 from urllib.request import urlopen as urlopen
+from Invest.core.WebAccess import parse_website
 from bs4 import BeautifulSoup as Soup
 from pathlib import Path
 import locale
 import datetime
 
 
+"""
 def parse_website(website):
-    """
+    
+    Get access to the HTML of a website
 
     :param website: Wedsite to be parsed
     :return: parsed HTML of parameter
-    """
+   
     client = urlopen(website)
     client_read = client.read()
     client.close()
     client_soup = Soup(client_read, "html.parser")
     return client_soup
+"""
 
 
 class Ecse:

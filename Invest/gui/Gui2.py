@@ -3,7 +3,8 @@ from pathlib import Path
 
 reports = []
 
-class block_1(tk.Frame):
+
+class Block1(tk.Frame):
     def __init__(self, window):
         tk.Frame.__init__(self, )
         self.pack()
@@ -19,13 +20,13 @@ class block_1(tk.Frame):
 
     def bt_new(self):
         self.pack_forget()
-        return block_2(self.window)
+        return Block2(self.window)
 
     def pack_it(self):
         return self.pack()
 
 
-class block_2(tk.Frame):
+class Block2(tk.Frame):
     def __init__(self, window):
         tk.Frame.__init__(self, )
         self.pack()
@@ -72,7 +73,6 @@ class block_2(tk.Frame):
 
         #  ------Other------
 
-
     def document(self):
         self.e.delete(0, 'end')
         doc_path = Path.home().joinpath("Documents")
@@ -86,9 +86,9 @@ class block_2(tk.Frame):
     def done(self):
         self.get_data()
         self.pack_forget()
-        return block_1(self.window),
+        return Block1(self.window),
 
-    def get_data(self,):
+    def get_data(self, ):
         report = ({
             "name": self.a.get(),
             "shares": self.b.get(),
@@ -99,40 +99,34 @@ class block_2(tk.Frame):
 
         reports.append(report)
 
-
-
         print(reports)
         print("hello")
 
 
-class block_par(tk.Frame):
+class BlockPar(tk.Frame):
     def __init__(self, window):
         tk.Frame.__init__(self, )
         self.pack()
         self.window = window
+
         # -----Create widgets-----
-		 self.b_name = tk.Label(self,text="Business Name" )
-		 self.m_price = tk.Label(self,text="Market Price")
-		 self.avg_return = tk.Label(self,text="Average Dividend// Expected Dividend")
-		 self.answer = tk.Label(self,text="Years till par return")
-		 
+        self.b_name = tk.Label(self, text="Business Name")
+        self.m_price = tk.Label(self, text="Market Price")
+        self.avg_return = tk.Label(self, text="Average Dividend// Expected Dividend")
+        self.answer = tk.Label(self, text="Years till par return")
+
         self.btn_calculate = tk.Button(self, text="calculate", command=self.calculate, padx=2, pady=2)
         self.btn_done = tk.Button(self, text="Done", command=self.quit, padx=2, pady=2)
- 
+
         # -----Place widget in frame-----
- 
+
         self.btn_calculate.grid(row=2, column=1, padx=200, pady=13)
         self.btn_done.grid(row=4, column=1, padx=200, pady=13)
- 
+
     def calculate(self):
-        
-        return pass
- 
-   
+        return None
 
-
-
-#root = tk.Tk()
+# root = tk.Tk()
 ## root.geometry("400x160")
-#a = block_1(root)
-#root.mainloop()
+# a = block_1(root)
+# root.mainloop()

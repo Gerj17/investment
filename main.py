@@ -1,6 +1,6 @@
-import Core
+import Invest.core.Core as Core
 import tkinter as tk
-import Gui2
+import Invest.gui.Gui2 as Gui2
 from urllib.request import urlopen as urlopen
 from bs4 import BeautifulSoup as Soup
 from pathlib import Path
@@ -23,7 +23,7 @@ def gui():
     """
     root = tk.Tk()
 
-    Gui2.block_1(root)
+    Gui2.Block1(root)
     print("hi")
 
     root.mainloop()
