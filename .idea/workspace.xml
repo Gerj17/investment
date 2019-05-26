@@ -183,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.EC_Share_Index">
     <configuration name="EC_Share_Index" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Investment" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -283,10 +283,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gui" />
         <item itemvalue="Python.Gui2" />
         <item itemvalue="Python.gui2" />
+        <item itemvalue="Python.gui" />
         <item itemvalue="Python.EC_Share_Index" />
+        <item itemvalue="Python.Gui2" />
       </list>
     </recent_temporary>
   </component>
