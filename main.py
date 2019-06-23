@@ -1,6 +1,6 @@
 import Invest.core.Core as Core
 import tkinter as tk
-import Invest.gui.Gui2 as Gui2
+import Invest.gui.GuiReport as Gui2
 from urllib.request import urlopen as urlopen
 from bs4 import BeautifulSoup as Soup
 from pathlib import Path
@@ -14,33 +14,23 @@ import time
     print( key,":\n", value,"\n"*2)"""
 
 
-def gui():
-    """
-    Creates GUI from GUI2 file
-    :return: The Data to create the report in a list .
-     Each group of data is a dictionary, all the dictionaries are held in a list
 
-    """
+# gui()
+
+
+def create_reports():
+    # Run GU
     root = tk.Tk()
 
     Gui2.Block1(root)
     print("hi")
 
     root.mainloop()
-    print("bye")
 
-    print("finall", Gui2.reports)
-    return Gui2.reports
-
-
-# gui()
-
-
-def create_reports():
     #  Collect Variables for report
     space = "\n"
     lines = "--------->"
-    for x in gui():
+    for x in Gui2.Block2.repo(Block2):
         name = x.get("name")
         shares = x.get("shares")
         price = x.get("price")
@@ -83,18 +73,17 @@ def create_reports():
 
 
 
-
-
 create_reports()
 
-me = Core.Stock(20, 8.88, .08)
 
-Core.Stock(20, 8.88, .08)
+#  me = Core.Stock(20, 8.88, .08)
 
-print("Fee Type:", me.fee_type(), "\n")
-print("Fee:$", me.fee(), "\n")
-print("total_cost:$", me.total_cost(), "\n")
-print("cost_per_share:$", me.cost_per_share(), "\n")
-print("cost_per_dollar:$", me.cost_per_dollar(), "\n")
-print("avg_div_per_dollar:$", me.avg_div_per_dollar(), "\n")
-print("years_required_till_return:", me.years_required_till_return(), "\n")
+#  Core.Stock(20, 8.88, .08)
+
+#  print("Fee Type:", me.fee_type(), "\n")
+#  print("Fee:$", me.fee(), "\n")
+#  print("total_cost:$", me.total_cost(), "\n")
+#  print("cost_per_share:$", me.cost_per_share(), "\n")
+#  print("cost_per_dollar:$", me.cost_per_dollar(), "\n")
+#  print("avg_div_per_dollar:$", me.avg_div_per_dollar(), "\n")
+#  print("years_required_till_return:", me.years_required_till_return(), "\n")

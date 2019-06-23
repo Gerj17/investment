@@ -1,10 +1,16 @@
 import tkinter as tk
 from pathlib import Path
 
-reports = []
+
+#  this gui is separated into two sections(blocks) they are written in chronological order
+#  the first block is the welcome and leave page it
+#  the second page is where the relevant data is entered to be calculated
 
 
 class Block1(tk.Frame):
+    """
+
+    """
     def __init__(self, window):
         tk.Frame.__init__(self, )
         self.pack()
@@ -27,6 +33,8 @@ class Block1(tk.Frame):
 
 
 class Block2(tk.Frame):
+    reports = []
+
     def __init__(self, window):
         tk.Frame.__init__(self, )
         self.pack()
@@ -97,18 +105,19 @@ class Block2(tk.Frame):
             "location": self.e.get(),
         })
 
-        reports.append(report)
+        self.reports.append(report)
 
-        print(reports)
+        print(self.reports)
         print("hello")
 
+    def repo(self):
+        return self.reports
 
 class BlockPar(tk.Frame):
     def __init__(self, window):
         tk.Frame.__init__(self, )
         self.pack()
         self.window = window
-
         # -----Create widgets-----
         self.b_name = tk.Label(self, text="Business Name")
         self.m_price = tk.Label(self, text="Market Price")
@@ -125,8 +134,7 @@ class BlockPar(tk.Frame):
 
     def calculate(self):
         return None
-
-# root = tk.Tk()
-## root.geometry("400x160")
-# a = block_1(root)
-# root.mainloop()
+#root = tk.Tk()
+# root.geometry("400x160")
+#a = BlockPar(root)
+#root.mainloop()

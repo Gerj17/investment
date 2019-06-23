@@ -64,6 +64,17 @@ class Stock:
     def money_format(figure):
         return float(format(figure, ".2f"))
 
+    @staticmethod
+    def min_num_shares(price):
+        """
+
+        :return: minimum amount of shares for transaction cost to be $35
+        """
+
+        formula = 35 / (price * .023)
+
+        return int(formula)
+
     def __init__(self, shares, bid_price, avg_div):
         """
         :param shares: Number of shares to purchase
@@ -76,16 +87,6 @@ class Stock:
         self.total_bid_price = float(self.shares * self.b_price)
         self.fee_type()
 
-    #
-    def min_num_shares(self):
-        """
-
-        :return: minimum amount of shares for transaction cost to be $35
-        """
-
-        formula = 35 / (self.b_price * .023)
-
-        return int(formula)
 
     # Fees related  to transaction
     def fee_type(self, money=35, percentage=.023):
@@ -93,7 +94,7 @@ class Stock:
         :return: is fee $35 or 2.3% of total share price
         """
 
-        if self.shares > self.min_num_shares():
+        if self.shares > self.min_num_shares(self.b_price):
             return percentage
         else:
             return money

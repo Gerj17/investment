@@ -4,7 +4,7 @@ from pathlib import Path
 from Invest.core.WebAccess import parse_website
 import time
 
-save_location = Path(Path.home(), "Desktop")
+save_location = Path(Path.home(), "Desktop","EC  index")
 
 
 # urls = {"EC-Share Index": "http://www.ecseonline.com/ecse_index.php", }
@@ -74,4 +74,3 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
     return
 
 
-EC_Share_Index()
