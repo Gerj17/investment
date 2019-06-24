@@ -79,7 +79,7 @@ class Stock:
         """
         :param shares: Number of shares to purchase
         :param bid_price: highest price willing o pay for stock per stock basis
-        :param avg_div: average level of dividends
+        :param avg_div: average level of dividends per share
         """
         self.shares = int(shares)
         self.avg_div = float(avg_div)
@@ -126,7 +126,7 @@ class Stock:
          quotient of - transaction fee AND number of shares to be purchased
 
         """
-        return self.money_format((self.fee() / self.shares))
+        return self.money_format((self.total_cost() / self.shares))
 
     def cost_per_dollar(self):
         """
@@ -135,7 +135,7 @@ class Stock:
         Formula
         - Quotient of - cost per share AND share
         """
-        return self.money_format((self.fee() / self.b_price))
+        return self.money_format((self.fee() / self.total_cost()))
 
     def avg_div_per_dollar(self):
         """
@@ -144,7 +144,15 @@ class Stock:
         Formula
         - Quotient of - average dividends and share price
         """
-        return self.money_format(self.avg_div / self.b_price)
+        return self.money_format(self.avg_div / self.total_cost())
+
+    def avg_div_per_share(self):
+        """
+
+        :return: average dividend paid per share invested in stock
+        Formula
+        """
+        return self.avg_div
 
     def years_required_till_return(self):
         """
@@ -155,14 +163,6 @@ class Stock:
 
         """
         return format(self.cost_per_share() / self.avg_div, ",.2f")
-
-    def gain_loss(self, ):
-        difference = (self.avg_div_per_dollar()-self.cost_per_dollar())
-
-        if self.avg_div_per_dollar() > self.cost_per_dollar():
-            return ("Gain", difference)
-        else:
-            return ("Loss", difference)
 
     def write(self,file_name,index):
        #return []
