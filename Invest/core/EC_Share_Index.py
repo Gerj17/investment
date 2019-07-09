@@ -11,13 +11,6 @@ save_location = Path(Path.home(), "Desktop","EC  index")
 # urls = {"EC-Share Index": "http://www.ecseonline.com/ecse_index.php", }
 # url = "http://www.ecseonline.com/ecse_index.php"
 
-"""def parse_website(website):
-    client = urlopen(website)
-    client_read = client.read()
-    client.close()
-    client_soup = Soup(client_read, "html.parser")
-    return client_soup"""
-
 
 def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
     """
@@ -34,7 +27,7 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
     current_date = info_table.findAll("td")[1].text[2:]
     market_value = info_table.findAll("td")[2].text
 
-    #  -----
+    #  -----File Name and Path-------
     filename = security_name + ".csv"
     file = Path(save_location, filename)
     print("Location of File ---> ", file)
@@ -70,8 +63,8 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
                 print(f"\n An entry for {last_date.strip()} was already made  :P :) ")
                 print( f" \n {market_value}  \n ")
                 print("\n  thanks for the time byee :P : \n")
-                time.sleep(4)
-            return
+                time.sleep(10)
+                return
 
         doc = open(file, "a")
         doc.write(current_date + "," + market_value + "\n")
