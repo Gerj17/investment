@@ -18,6 +18,13 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
     :param web_page: the Easter Caribbean index webpage.
     :return: None
     """
+
+    def end_message(market_value):
+        print( f" \n {market_value} Points \n ")
+        print("\n  thanks for the time byee :P : \n")
+
+
+
     page = parse_website(web_page)
 
     # -----Get info from webpage-----
@@ -61,15 +68,15 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
             if last_date.strip() == current_date.strip():
                 # print("\n", "An entry for", current_date.strip(), "was already made")
                 print(f"\n An entry for {last_date.strip()} was already made  :P :) ")
-                print( f" \n {market_value}  \n ")
-                print("\n  thanks for the time byee :P : \n")
+                end_message(market_value)
                 time.sleep(10)
                 return
 
         doc = open(file, "a")
+        #  write data for current date 
         doc.write(current_date + "," + market_value + "\n")
     else:
-        #create a new file
+        #create a new file if there is no existing file
         print(f"false \n now creating a new file {None} ")
         doc = open(file, "a")
         title = "Security Name: " + str(security_name) + "\n"
@@ -78,9 +85,13 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
         doc.write(title)
         doc.write(headers)
         doc.write(current_date + "," + market_value + "\n")
+        end_message(market_value)
+
+
 
     doc.close()
     print("\n", "A New Entry for", current_date.strip(), "Was Made :P :) ")
+    end_message(market_value)
     time.sleep(9)
     return
 
