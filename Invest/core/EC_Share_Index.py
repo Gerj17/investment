@@ -20,8 +20,12 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
     """
 
     def end_message(market_value):
+        """
+        :market_value: last available point status of the market
+        """
         print( f" \n {market_value} Points \n ")
         print("\n  thanks for the time byee :P : \n")
+        time.sleep(10)
 
 
 
@@ -41,6 +45,7 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
 
     if file.is_file():
         print("T/F Does the file already exist? ---> ", 'True')
+
         #  Check last date with current date to ensure no duplicates
         with open(file, "r") as f:
             a = f.read().replace("\n", ":")
@@ -49,27 +54,9 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
             string = ''.join(last_entry)
             last_date = string[:len(string) - 7].strip()
 
-            # testing material 
-            # with open("newdoc.txt","w") as nd:
-            #     nd.write(a)
-            #     
-            # with open("newdoc.txt","a") as nd:
-            #    var1 =f.read()
-            #     nd.write(f"\n1{var1}")
-            #     
-
-            # with open("newdoc.txt","a") as nd:
-            #     nd.write(f"\n2{content}")
-            #     sys.exit()
-            
-
-            #  print("last_date",last_date)
-            #  print("Date", date)
             if last_date.strip() == current_date.strip():
-                # print("\n", "An entry for", current_date.strip(), "was already made")
                 print(f"\n An entry for {last_date.strip()} was already made  :P :) ")
                 end_message(market_value)
-                time.sleep(10)
                 return
 
         doc = open(file, "a")
@@ -92,7 +79,6 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
     doc.close()
     print("\n", "A New Entry for", current_date.strip(), "Was Made :P :) ")
     end_message(market_value)
-    time.sleep(9)
     return
 
 
