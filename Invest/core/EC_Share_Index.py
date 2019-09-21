@@ -4,6 +4,7 @@ from pathlib import Path
 from Invest.core.WebAccess import parse_website
 import time
 import  sys
+import pandas as p
 
 save_location = Path(Path.home(), "Desktop","EC  index")
 
@@ -50,9 +51,14 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
         with open(file, "r") as f:
             a = f.read().replace("\n", ":")
             content = a.strip().split(":")
-            last_entry = content[len(content) - 2:len(content) - 1]
+            last_entry = content[len(content) - 2:len(content) - 1] # make more clean
+            print("last_entry = ",last_entry)
             string = ''.join(last_entry)
+            print('string =', string)
             last_date = string[:len(string) - 7].strip()
+           
+            print("last_date = ", last_date)
+            time.sleep(600)
 
             if last_date.strip() == current_date.strip():
                 print(f"\n An entry for {last_date.strip()} was already made  :P :) ")
@@ -81,4 +87,8 @@ def EC_Share_Index(web_page="http://www.ecseonline.com/ecse_index.php"):
     end_message(market_value)
     return
 
+class ViewIndex:
+    def __init__(self,filelocation, *args, **kwargs):
+        self.loc = filelocation
 
+    def readIndex(self, )
